@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "-OLfaOIl88mVz-5O5ypG6"
+uri = "file://artifacts/villah-portfolio/public/images/project-fintech.png"
+type = "image"
+title = "fintech web app dashboard"
+
+[[generated]]
+id = "pgwNXy0WuJKBYLszH019G"
+uri = "file://artifacts/villah-portfolio/public/images/project-ai.png"
+type = "image"
+title = "ai machine learning platform"
+
+[[generated]]
+id = "LOGSc32eegL3nEGAFaJpZ"
+uri = "file://artifacts/villah-portfolio/public/images/project-mobile.png"
+type = "image"
+title = "mobile fitness tracker app"
+
+[[generated]]
+id = "Bi_Zo-eBYQaXxDpLp_eF_"
+uri = "file://artifacts/villah-portfolio/public/images/project-devops.png"
+type = "image"
+title = "cloud infrastructure dashboard"
+
+[[generated]]
+id = "xWygzubUeA7ElJNHxMLEq"
+uri = "file://artifacts/villah-portfolio/public/images/project-ecommerce.png"
+type = "image"
+title = "e-commerce storefront"
+
+[[generated]]
+id = "NpQcrHQyBZWlNA2Y5LWQx"
+uri = "file://artifacts/villah-portfolio/public/images/project-api.png"
+type = "image"
+title = "developer developer tool api"

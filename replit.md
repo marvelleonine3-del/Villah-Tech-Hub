@@ -16,6 +16,25 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### Villah Portfolio (`/`)
+- **Type**: react-vite, frontend-only (no backend)
+- **Path**: `artifacts/villah-portfolio/`
+- **Purpose**: Personal portfolio for "Villah" — a versatile tech professional
+- **Features**:
+  - Dark-mode first design with electric cyan/blue accents
+  - Animated hero section with Framer Motion
+  - Skills radar chart (Recharts)
+  - Tech stack icons (react-icons/si)
+  - Project gallery with modal views (6 projects)
+  - Services section
+  - Experience timeline
+  - Testimonials
+  - Contact form (react-hook-form + zod)
+  - Light/dark mode toggle
+  - Scroll-spy navigation
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages

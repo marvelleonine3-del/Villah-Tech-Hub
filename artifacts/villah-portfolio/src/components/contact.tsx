@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Send, MapPin, Mail, Loader2 } from "lucide-react";
+import { Send, MapPin, Mail, Loader2, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
   Form,
@@ -62,22 +62,41 @@ export function Contact() {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <div className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center text-primary">
+              <a
+                href="mailto:marvelleonine@gmail.com"
+                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
+                data-testid="link-email"
+              >
+                <div className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center text-primary group-hover:border-primary transition-colors">
                   <Mail size={20} />
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Email</p>
-                  <p className="font-mono text-sm">hello@villah.tech</p>
+                  <p className="font-mono text-sm">marvelleonine@gmail.com</p>
                 </div>
-              </div>
+              </a>
+              <a
+                href="https://wa.me/2349024823087"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
+                data-testid="link-whatsapp"
+              >
+                <div className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center text-primary group-hover:border-primary transition-colors">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">WhatsApp</p>
+                  <p className="font-mono text-sm">+234 902 482 3087</p>
+                </div>
+              </a>
               <div className="flex items-center gap-4 text-muted-foreground">
                 <div className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center text-primary">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Location</p>
-                  <p className="font-mono text-sm">San Francisco, CA / Remote</p>
+                  <p className="font-mono text-sm">Nigeria / Remote Worldwide</p>
                 </div>
               </div>
             </div>

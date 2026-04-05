@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Dribbble } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,17 +17,17 @@ export function Footer() {
           </div>
 
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-footer-github">
               <Github size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-footer-linkedin">
               <Linkedin size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-footer-twitter">
               <Twitter size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors">
-              <Dribbble size={18} />
+            <a href="mailto:marvelleonine@gmail.com" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-footer-email">
+              <Mail size={18} />
             </a>
           </div>
         </div>

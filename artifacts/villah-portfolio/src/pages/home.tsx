@@ -1,7 +1,10 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Skills } from "@/components/skills";
-import { Projects } from "@/components/projects";
+import { Stats } from "@/components/stats";
+import { TechUniverse } from "@/components/tech-universe";
+import { Creations } from "@/components/creations";
+import { ShowcaseMarquee } from "@/components/showcase-marquee";
+import { AiLab } from "@/components/ai-lab";
 import { Services } from "@/components/services";
 import { Experience } from "@/components/experience";
 import { Testimonials } from "@/components/testimonials";
@@ -16,8 +19,11 @@ export default function Home() {
         <Navbar />
         <main>
           <Hero />
-          <Skills />
-          <Projects />
+          <Stats />
+          <TechUniverse />
+          <Creations />
+          <ShowcaseMarquee />
+          <AiLab />
           <Services />
           <Experience />
           <Testimonials />

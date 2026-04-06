@@ -60,6 +60,7 @@ function FloatingLabel({ children, active }: { children: React.ReactNode; active
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [gmailUrl, setGmailUrl] = useState("");
   const [activeField, setActiveField] = useState<string | null>(null);
 
   const form = useForm<FormValues>({
@@ -86,17 +87,25 @@ export function Contact() {
       `Reply to: ${values.email}`,
     ].join("\n");
 
-    const gmailUrl =
+    const url =
       `https://mail.google.com/mail/?view=cm&fs=1` +
       `&to=${encodeURIComponent(VILLAH_EMAIL)}` +
       `&su=${encodeURIComponent(`[Portfolio] ${values.subject}`)}` +
       `&body=${encodeURIComponent(gmailBody)}`;
 
-    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    setGmailUrl(url);
+
+    // Programmatic anchor click — bypasses popup blockers, treated as direct user action
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
     setSent(true);
     form.reset();
-
-    setTimeout(() => setSent(false), 8000);
   }
 
   const charPercent = Math.min((messageValue.length / MAX_MESSAGE) * 100, 100);
@@ -265,11 +274,29 @@ export function Contact() {
                     <CheckCircle2 size={40} className="text-emerald-400" />
                   </motion.div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Gmail opened!</h3>
+                    <h3 className="text-2xl font-bold mb-2">Gmail is opening!</h3>
                     <p className="text-muted-foreground max-w-sm">
-                      Your message is pre-filled and ready to go. Just review it and hit <strong className="text-foreground">Send</strong> in Gmail.
+                      Your message is pre-filled and ready to go. Just hit <strong className="text-foreground">Send</strong> inside Gmail.
                     </p>
                   </div>
+
+                  {/* Fallback — in case the redirect was blocked */}
+                  {gmailUrl && (
+                    <motion.a
+                      href={gmailUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.03, boxShadow: "0 10px 30px -8px rgba(0,255,255,0.4)" }}
+                      whileTap={{ scale: 0.97 }}
+                      className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
+                      data-testid="button-open-gmail"
+                    >
+                      <Mail size={16} />
+                      Gmail didn't open? Click here
+                      <ExternalLink size={14} className="opacity-70" />
+                    </motion.a>
+                  )}
+
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <MessageSquare size={14} className="text-primary" />
                     <span>Villah typically replies within 24 hours</span>

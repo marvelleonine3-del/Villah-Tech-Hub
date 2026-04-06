@@ -88,9 +88,8 @@ export function Contact() {
     ].join("\n");
 
     const url =
-      `https://mail.google.com/mail/?view=cm&fs=1` +
-      `&to=${encodeURIComponent(VILLAH_EMAIL)}` +
-      `&su=${encodeURIComponent(`[Portfolio] ${values.subject}`)}` +
+      `mailto:${VILLAH_EMAIL}` +
+      `?subject=${encodeURIComponent(`[Portfolio] ${values.subject}`)}` +
       `&body=${encodeURIComponent(gmailBody)}`;
 
     setGmailUrl(url);
@@ -284,15 +283,13 @@ export function Contact() {
                   {gmailUrl && (
                     <motion.a
                       href={gmailUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.03, boxShadow: "0 10px 30px -8px rgba(0,255,255,0.4)" }}
                       whileTap={{ scale: 0.97 }}
                       className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
                       data-testid="button-open-gmail"
                     >
                       <Mail size={16} />
-                      Gmail didn't open? Click here
+                      Tap here to open Gmail
                       <ExternalLink size={14} className="opacity-70" />
                     </motion.a>
                   )}
